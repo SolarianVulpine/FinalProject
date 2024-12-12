@@ -1,0 +1,171 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffbc0a;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #333;
+}
+
+/* would have been Hero Image but changed to simple pencil design */
+.hero {
+  height: 50vh;
+  background: repeating-linear-gradient(
+    #ffbc0a,
+    #ffbc0a 80px,
+    #b58500 80px,
+    #b58500 82px
+  );
+  position: relative;
+}
+
+.pencilElements {
+  display: flex;
+  height: 50vh;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.pencilElements .pencilWood {
+  height: 50vh;
+  position: absolute;
+  aspect-ratio: cos(30deg);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background: linear-gradient(45deg, #fa6900, #c02942);
+  z-index: 1;
+}
+
+.pencilElements .pencilPoint {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #333;
+  align-self: center;
+  transform: rotate(-90deg);
+  position: absolute;
+  z-index: 2;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+}
+
+/* Navigation Column */
+.nav {
+  width: 20%;
+  background-color: #c42847;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 5px dashed #271033;
+}
+
+/* Navigation Column */
+.nav {
+  width: 20%;
+  background-color: #c42847;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 5px dashed #271033;
+}
+
+/* Navigation Links */
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 15px 0;
+  position: relative;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #ffbc0a;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: #271033;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::before {
+  width: 100%;
+}
+
+.nav ul li a:hover {
+  color: #fff;
+}
+
+/* Main Content Column */
+.main-content {
+  width: 60%;
+  padding: 20px;
+  background-color: #fff;
+  border-left: 5px dashed #271033;
+  border-right: 5px dashed #271033;
+  overflow-y: auto;
+  background: linear-gradient(
+    #fff 40px,
+    #f0f0f0 40px,
+    #f0f0f0 41px
+  ); /* Creates the lines */
+  background-size: 100% 41px;
+}
+
+/* Extra Content Column */
+.extra-content {
+  width: 20%;
+  background-color: #227c9d;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px dashed #271033;
+  overflow-y: auto;
+}
+
+/* Headings */
+h1,
+h2 {
+  font-family: "Caveat Brush", cursive;
+  margin-top: 0;
+  color: #7dce82;
+}
+
+p {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 3px dashed #ffbc0a;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  display: block;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffbc0a,
+    #ffbc0a 10px,
+    #c42847 10px,
+    #c42847 20px
+  );
+  margin: 10px 0;
+}
