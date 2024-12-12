@@ -7,11 +7,44 @@ body {
   color: #333;
 }
 
-/* Hero Image */
+/* would have been Hero Image but changed to simple pencil design */
 .hero {
-  background: url("path/to/your/hero-image.jpg") no-repeat center center;
-  background-size: cover;
   height: 50vh; /* Half the viewport height */
+  background: repeating-linear-gradient(
+    #ffbc0a,
+    #ffbc0a 80px,
+    #b58500 80px,
+    #b58500 82px
+  );
+  position: relative;
+}
+
+.pencilElements {
+  display: flex;
+  height: 50vh;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.pencilElements .pencilWood {
+  height: 50vh;
+  position: absolute;
+  aspect-ratio: cos(30deg);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background: linear-gradient(45deg, #fa6900, #c02942);
+  z-index: 1;
+}
+
+.pencilElements .pencilPoint {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #333; /* Color of the pencil lead */
+  align-self: center;
+  transform: rotate(-90deg);
+  position: absolute;
+  z-index: 2;
 }
 
 /* Container */
@@ -52,7 +85,7 @@ body {
 
 .nav ul li a {
   text-decoration: none;
-  color: #FFBC0A; /* Bright yellow for better contrast */
+  color: #ffbc0a; /* Bright yellow for better contrast */
   font-weight: bold;
   position: relative;
   z-index: 1; /* Ensure the link text is above the ::before element */
@@ -61,7 +94,7 @@ body {
 }
 
 .nav ul li a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -80,7 +113,6 @@ body {
   color: #fff; /* Change text color to white when hovered */
 }
 
-
 /* Main Content Column */
 .main-content {
   width: 60%;
@@ -89,11 +121,13 @@ body {
   border-left: 5px dashed #271033; /* Dashed border in rich purple */
   border-right: 5px dashed #271033; /* Dashed border in rich purple */
   overflow-y: auto;
-  background: linear-gradient(#fff 40px, #f0f0f0 40px, #f0f0f0 41px); /* Creates the lines */
+  background: linear-gradient(
+    #fff 40px,
+    #f0f0f0 40px,
+    #f0f0f0 41px
+  ); /* Creates the lines */
   background-size: 100% 41px; /* Height of the lines */
 }
-
-
 
 /* Extra Content Column */
 .extra-content {
@@ -106,10 +140,11 @@ body {
 }
 
 /* Headings */
-h1, h2 {
-  font-family: 'Caveat Brush', cursive; /* Fun, brush font for headings */
+h1,
+h2 {
+  font-family: "Caveat Brush", cursive; /* Fun, brush font for headings */
   margin-top: 0;
-  color: #7DCE82; /* Fresh green */
+  color: #7dce82; /* Fresh green */
 }
 
 /* Ensure consistent padding for child-like feel */
