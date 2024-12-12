@@ -21,23 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         console.log("Data parsed:", data);
         const outputDiv = document.getElementById("output");
-        const word = data[0].word;
-        let html = `<h1>${word}</h1>`;
+        let html = `<h1>${data[0].word}</h1>`;
 
-        const nounMeanings = data[0].meanings.filter(
-          (meaning) => meaning.partOfSpeech === "noun"
-        );
+        const allDefinitions = data[0].meanings;
 
-        nounMeanings.forEach((meaning) => {
-          html += `<h2>${meaning.partOfSpeech}</h2>`;
-          meaning.definitions.forEach((def) => {
+        allDefinitions.forEach((definition) => {
+          html += `<h2>${
+            definition.partOfSpeech || "Unknown Part of Speech"
+          }</h2>`;
+          definition.definitions.forEach((def) => {
             html += `<p>${def.definition}</p>`;
           });
         });
-
-        if (nounMeanings.length === 0) {
-          html += `<p>No noun definitions found.</p>`;
-        }
 
         outputDiv.innerHTML = html;
         console.log("HTML updated");
