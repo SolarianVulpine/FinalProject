@@ -2,23 +2,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("fetch-button");
 
   button.addEventListener("click", function () {
-    fetch("https://random-word-api.herokuapp.com/word?number=1")
-      .then((response) => response.json())
-      .then((wordData) => {
+    fetchWordAndDefinitions();
+  });
+
+  async function fetchWordAndDefinitions() {
+    let retries = 0;
+    const maxRetries = 5;
+
+    while (retries < maxRetries) {
+      try {
+        const randomWordData = await fetch(
+          "https://random-word-api.herokuapp.com/word?number=1"
+        );
+        const wordData = await randomWordData.json();
+
+        if (!wordData[0]) {
+          throw new Error("No word data received");
+        }
+
         const randomWord = wordData[0];
         console.log("Selected word:", randomWord);
 
         const cacheBuster = `v${new Date().getTime()}`;
 
-        return fetch(
+        const response = await fetch(
           `https://api.dictionaryapi.dev/api/v2/entries/en/${randomWord}?_=${cacheBuster}`
         );
-      })
-      .then((response) => {
-        console.log("Response received");
-        return response.json();
-      })
-      .then((data) => {
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
         console.log("Data parsed:", data);
         const outputDiv = document.getElementById("output");
         let html = `<h1>${data[0].word}</h1>`;
@@ -36,7 +52,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         outputDiv.innerHTML = html;
         console.log("HTML updated");
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  });
+
+        return;
+      } catch (error) {
+        retries++;
+        console.error(`Attempt ${retries} failed:`, error.message);
+
+        if (retries >= maxRetries) {
+          console.error(`Max retries reached (${maxRetries}). Giving up.`);
+          return;
+        }
+
+        console.log(`Retrying in 2 seconds...`);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
+    }
+  }
 });
