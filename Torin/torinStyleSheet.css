@@ -66,3 +66,57 @@ h1,
 h2 {
   margin-top: 0;
 }
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.centered-title h1 {
+  font-family: "Caveat Brush", cursive;
+  font-size: 4rem;
+  color: cadetblue;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.left-shadow-title h1 {
+  font-family: "Caveat Brush", cursive;
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  text-align: left;
+  margin: 20px;
+}
+
+.right-bg-title {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.right-bg-title h1 {
+  font-family: "Caveat Brush", cursive;
+  font-size: 4rem;
+  color: #fff;
+  text-align: right;
+  margin: 0;
+}
+
+.rotated-title h1 {
+  font-family: "Caveat Brush", cursive;
+  font-size: 4rem;
+  color: #fff;
+  transform: rotate(-10deg);
+  text-align: center;
+  margin: 20px 0;
+}
+
+.bordered-title h1 {
+  font-family: "Caveat Brush", cursive;
+  font-size: 4rem;
+  color: cadetblue;
+  border: 2px solid #fff;
+  padding: 10px;
+  display: inline-block;
+}
