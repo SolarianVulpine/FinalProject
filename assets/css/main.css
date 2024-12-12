@@ -169,3 +169,30 @@ p {
   );
   margin: 10px 0;
 }
+
+footer {
+  background-color: #c42847;
+  color: #f9f7f3;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer_links ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer_links li {
+  margin: 0 10px;
+}
+
+.footer_links a {
+  text-align: center;
+  color: #f9f7f3;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
