@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Association Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <h1>Word Association Game</h1>
+            </header>
+            
+            <main>
+                <div id="game-area">
+                    <div id="prompt-container">
+                        <p id="prompt" class="prompt">Your prompt will appear here</p>
+                    </div>
+                    
+                    <div id="input-container">
+                        <input type="text" id="user-input" placeholder="Type your associated word" maxlength="30">
+                        <button id="submit-btn">Submit</button>
+                    </div>
+                </div>
+
+                <div id="game-info">
+                    <div class="score-container">
+                        <span class="label">Score:</span>
+                        <span id="score" class="value">0</span>
+                    </div>
+                    <div class="timer-container">
+                        <span class="label">Time Left:</span>
+                        <span id="timer" class="value">60</span>
+                        <span class="label">seconds</span>
+                    </div>
+                </div>
+
+                <div id="feedback-container">
+                    <p id="feedback" class="feedback"></p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
