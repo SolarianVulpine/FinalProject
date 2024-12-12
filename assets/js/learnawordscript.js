@@ -3,11 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   button.addEventListener("click", function () {
     const words = ["hello", "world", "truth", "love", "code"];
-
     const randomWord = words[Math.floor(Math.random() * words.length)];
     console.log("Selected word:", randomWord);
 
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${randomWord}`)
+    // Add a unique parameter to the URL to prevent caching
+    const uniqueParam = `?timestamp=${new Date().getTime()}`;
+
+    fetch(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${randomWord}${uniqueParam}`
+    )
       .then((response) => {
         console.log("Response received");
         return response.json();
