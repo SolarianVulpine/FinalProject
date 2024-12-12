@@ -1,37 +1,45 @@
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
-  background-color: cadetblue;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  background-color: #ffbc0a; /* Light yellow background */
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Fun, informal font */
+  color: #333;
 }
 
-header {
-  background: url("/Torin/torinImages/wordsearch.png") no-repeat center center;
+/* Hero Image */
+.hero {
+  background: url("path/to/your/hero-image.jpg") no-repeat center center;
   background-size: cover;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  position: relative;
+  height: 50vh; /* Half the viewport height */
 }
 
+/* Container */
 .container {
   display: flex;
-  width: 100%;
-  height: 50vh;
+  flex-direction: row;
+  height: 50vh; /* Remaining half of the viewport height */
 }
 
+/* Navigation Column */
 .nav {
   width: 20%;
-  background-color: #f4f4f4;
+  background-color: #c42847; /* Bold red */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 5px dashed #271033; /* Dashed border in rich purple */
 }
 
+/* Navigation Column */
+.nav {
+  width: 20%;
+  background-color: #c42847; /* Bold red */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 5px dashed #271033; /* Dashed border in rich purple */
+}
+
+/* Navigation Links */
 .nav ul {
   list-style-type: none;
   padding: 0;
@@ -39,84 +47,92 @@ header {
 
 .nav ul li {
   margin: 15px 0;
+  position: relative; /* Make the li position relative */
 }
 
 .nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #FFBC0A; /* Bright yellow for better contrast */
   font-weight: bold;
+  position: relative;
+  z-index: 1; /* Ensure the link text is above the ::before element */
+  padding: 5px; /* Add padding for better spacing */
+  overflow: hidden; /* Ensure the background doesn't overflow */
 }
 
+.nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: #271033; /* Rich purple */
+  z-index: -1; /* Place the background behind the text */
+  transition: width 0.3s ease; /* Smooth transition for the extending effect */
+}
+
+.nav ul li a:hover::before {
+  width: 100%; /* Extend the background to full width */
+}
+
+.nav ul li a:hover {
+  color: #fff; /* Change text color to white when hovered */
+}
+
+
+/* Main Content Column */
 .main-content {
   width: 60%;
   padding: 20px;
   background-color: #fff;
+  border-left: 5px dashed #271033; /* Dashed border in rich purple */
+  border-right: 5px dashed #271033; /* Dashed border in rich purple */
   overflow-y: auto;
+  background: linear-gradient(#fff 40px, #f0f0f0 40px, #f0f0f0 41px); /* Creates the lines */
+  background-size: 100% 41px; /* Height of the lines */
 }
 
-.api-content {
+
+
+/* Extra Content Column */
+.extra-content {
   width: 20%;
-  background-color: #f4f4f4;
+  background-color: #227c9d; /* Deep blue */
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px dashed #271033; /* Dashed border in rich purple */
   overflow-y: auto;
 }
 
-h1,
-h2 {
+/* Headings */
+h1, h2 {
+  font-family: 'Caveat Brush', cursive; /* Fun, brush font for headings */
   margin-top: 0;
+  color: #7DCE82; /* Fresh green */
 }
 
-.caveat-brush-regular {
-  font-family: "Caveat Brush", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.centered-title h1 {
-  font-family: "Caveat Brush", cursive;
-  font-size: 4rem;
-  color: cadetblue;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.left-shadow-title h1 {
-  font-family: "Caveat Brush", cursive;
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 2px 2px #000;
-  text-align: left;
-  margin: 20px;
-}
-
-.right-bg-title {
-  background-color: rgba(0, 0, 0, 0.5);
+/* Ensure consistent padding for child-like feel */
+p {
   padding: 10px;
+  background-color: #f5f5f5;
+  border: 3px dashed #ffbc0a; /* Yellow dashed borders around text areas */
+  margin: 10px 0;
+  border-radius: 10px;
 }
 
-.right-bg-title h1 {
-  font-family: "Caveat Brush", cursive;
-  font-size: 4rem;
-  color: #fff;
-  text-align: right;
-  margin: 0;
-}
-
-.rotated-title h1 {
-  font-family: "Caveat Brush", cursive;
-  font-size: 4rem;
-  color: #fff;
-  transform: rotate(-10deg);
-  text-align: center;
-  margin: 20px 0;
-}
-
-.bordered-title h1 {
-  font-family: "Caveat Brush", cursive;
-  font-size: 4rem;
-  color: cadetblue;
-  border: 2px solid #fff;
-  padding: 10px;
-  display: inline-block;
+/* Add some whimsical touches */
+.container::before,
+.container::after {
+  content: "";
+  display: block;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffbc0a,
+    #ffbc0a 10px,
+    #c42847 10px,
+    #c42847 20px
+  );
+  margin: 10px 0;
 }
