@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("fetch-button");
   button.addEventListener("click", function () {
+    console.log("Button clicked");
     fetch("https://api.dictionaryapi.dev/api/v2/entries/en/truth")
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("Response received");
+        return response.json();
+      })
       .then((data) => {
+        console.log("Data parsed:", data);
         const outputDiv = document.getElementById("output");
         const word = data[0].word;
         let html = `<h1>${word}</h1>`;
@@ -16,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         outputDiv.innerHTML = html;
+        console.log("HTML updated");
       })
       .catch((error) => console.error("Error fetching data:", error));
   });
