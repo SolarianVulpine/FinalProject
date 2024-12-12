@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const randomWord = wordData[0];
         console.log("Selected word:", randomWord);
 
-        const uniqueParam = `?timestamp=${new Date().getTime()}`;
+        const cacheBuster = `v${new Date().getTime()}`;
 
         return fetch(
-          `https://api.dictionaryapi.dev/api/v2/entries/en/${randomWord}${uniqueParam}`
+          `https://api.dictionaryapi.dev/api/v2/entries/en/${randomWord}?_=${cacheBuster}`
         );
       })
       .then((response) => {
