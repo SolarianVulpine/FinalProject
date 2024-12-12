@@ -14,5 +14,21 @@ class WordAssociationGame {
         this.timerElement = document.getElementById('timer');
         this.feedbackElement = document.getElementById('feedback');
 
-        this.bindEvents()
-    
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        this.submitButton.addEventListener('click', () => this.checkAssociation());
+        this.userInputElement.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') this.checkAssociation();
+        });
+    }
+
+    async startGame() {
+        try {
+            // If it's the first round, start with a seed word
+            if (!this.currentWord) {
+                const seedWords = ['happy', 'love', 'music', 'home', 'book'];
+                this.currentWord = seedWords[Math.floor(Math.random() * seedWords.length)];
+            }
+ 
