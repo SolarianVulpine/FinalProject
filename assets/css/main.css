@@ -233,20 +233,34 @@ body {
   overflow-y: auto;
 }
 
+/* Styling for Recent Words */
 #recent-words {
-        margin-top: 20px;
-        font-family: "Patrick Hand", cursive;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-top: 20px;
+    font-family: "Patrick Hand", cursive;
 }
 
 #recent-words span {
-        cursor: pointer;
-        margin-right: 10px;
-        color: #ebc476;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #ebc476;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 0.5s forwards;
 }
 
 #recent-words span:hover {
-        text-decoration: underline;
+    text-decoration: underline;
 }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Headings */
 h1 {

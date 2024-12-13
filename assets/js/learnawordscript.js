@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("fetch-button");
   const recentWords = [];
-  const maxRecentWords = 3;
+  const maxRecentWords = 10;
 
   button.addEventListener("click", function () {
     showLoading();
