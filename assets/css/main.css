@@ -7,6 +7,13 @@ body {
   color: #333;
 }
 
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* would have been Hero Image but changed to simple pencil design */
 .hero {
   height: 50vh;
@@ -65,7 +72,8 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  height: 50vh;
+  flex: 1;
+  /* height: 50%; */
 }
 
 /* Navigation Column */
@@ -129,6 +137,8 @@ body {
 
 /* Main Content Column */
 .main-content {
+  display: flex;
+  flex-direction: column;
   width: 60%;
   padding: 20px;
   background-color: #fff;
@@ -143,6 +153,76 @@ body {
   background-size: 100% 41px;
 }
 
+#fetch-button {
+  background-color: #c42847;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  font-family: "Patrick Hand", cursive;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+#fetch-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 5px #666;
+}
+
+#fetch-button:hover {
+  background-color: #a22039;
+}
+
+/* Loader Styles */
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+
+.loader {
+  color: #a22039;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  margin: 15px auto; 
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
+.loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
 /* Extra Content Column */
 .extra-content {
   width: 20%;
@@ -151,6 +231,21 @@ body {
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   border-left: 5px dashed #271033;
   overflow-y: auto;
+}
+
+#recent-words {
+        margin-top: 20px;
+        font-family: "Patrick Hand", cursive;
+}
+
+#recent-words span {
+        cursor: pointer;
+        margin-right: 10px;
+        color: #ebc476;
+}
+
+#recent-words span:hover {
+        text-decoration: underline;
 }
 
 /* Headings */
@@ -196,6 +291,8 @@ footer {
   background-position: center;
   position: relative;
   border-top: 5px solid #271033;
+  width: 100%;
+  margin-top: auto;
 }
 
 .footer_links ul {
@@ -216,6 +313,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.footer_links a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .patrick-hand-regular {

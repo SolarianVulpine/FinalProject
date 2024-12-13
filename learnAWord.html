@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" type="image/png" href="assets/images/Book.png" />
+    <link rel="icon" type="image/png" href="/assets/images/Book.png" />
     <title>What's the Word?</title>
   </head>
   <body>
@@ -22,62 +22,60 @@
       <nav class="nav">
         <ul>
           <li>
-            <a href="/index.html">Home</a>
+            <a href="index.html">Home</a>
           </li>
           <li>
-            <a href="/game.html">Word Scramble Game</a>
+            <a href="game.html">Word Scramble Game</a>
           </li>
           <li>
-            <a href="/learnAWord.html">Learn a Word</a>
+            <a href="learnAWord.html">Learn a Word</a>
           </li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
       <main class="main-content">
         <h1>Welcome to Learn a Word!</h1>
-        <p></p>
+        <p>
+          Welcome avid vocabulist, to a page where every click introduces you to a
+          fresh new word and its definition! Unleash your curiosity and expand
+          your vocabulary effortlessly. Each word you discover is a gateway to
+          enhancing your language skills and enriching your conversations. Dive
+          in and enjoy the journey of learning, one word at a time!
+        </p>
 
-                <button id="fetch-button">Fetch Word Data</button>
-                <div id="output"></div>
-         
+        <button id="fetch-button">New Word!</button>
+        <div id="loading-indicator" class="loader" style="display: none;"></div>
+        <div id="output"></div>
       </main>
       <div class="extra-content">
         <h2>Extra Content</h2>
-        <p>Additional fun and crafty content here.</p>
+        <div id="recent-words"></div>
       </div>
     </div>
-    <footer>
+    <footer class="footer_links">
       <ul>
         <li>
-          <a href="https://github.com/meetDeveloper/freeDictionaryAPI"
-            ><img
-              src="FinalProject_ActivityBook/assets/images/github.png"
-              alt="Github"
-            />
-            Dictionary Api</a
-          >
+          <a href="https://github.com/meetDeveloper/freeDictionaryAPI">
+            <img src="/assets/images/github.png" alt="Github" />
+            Dictionary Api
+          </a>
         </li>
         <li>
-          <a href="https://github.com/SolarianVulpine/FinalProject_ActivityBook"
-            ><img
-              src="FinalProject_ActivityBook/assets/images/github.png"
-              alt="GitHub"
-            />
-            Our Repository</a
+          <a
+            href="https://github.com/SolarianVulpine/FinalProject_ActivityBook"
           >
+            <img src="/assets/images/github.png" alt="GitHub" />
+            Our Repository
+          </a>
         </li>
         <li>
-          <a href="https://www.atlasschool.com/"
-            ><img
-              src="FinalProject_ActivityBook/assets/images/Lumi.png"
-              alt="Atlas Mascot Lumi"
-            />
-            Atlas</a
-          >
+          <a href="https://www.atlasschool.com/">
+            <img src="/assets/images/Lumi.png" alt="Atlas Mascot Lumi" />
+            Atlas
+          </a>
         </li>
       </ul>
     </footer>
     <script src="assets/js/learnawordscript.js"></script>
-
   </body>
 </html>
