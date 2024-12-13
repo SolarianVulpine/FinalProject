@@ -22,8 +22,21 @@ body {
 .pencilElements {
   display: flex;
   height: 50vh;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
+  padding-left: 100px;
+}
+
+.pencilElements .pencilLabel h1 {
+        color: #ecdada;
+        background-color: #000;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+        font-size: xx-large;
 }
 
 .pencilElements .pencilWood {
@@ -31,7 +44,7 @@ body {
   position: absolute;
   aspect-ratio: cos(30deg);
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  background: linear-gradient(45deg, #fa6900, #c02942);
+  background-color:  #ebc476;
   z-index: 1;
 }
 
