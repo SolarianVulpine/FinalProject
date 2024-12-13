@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/main_learnAWord.css" />
+    <link rel="stylesheet" href="assets/css/animations_learnAWord.css" />
     <link rel="icon" type="image/png" href="assets/images/Book.png" />
     <title>What's the Word?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,12 +42,17 @@
           your vocabulary effortlessly. Each word you discover is a gateway to
           enhancing your language skills and enriching your conversations. Dive
           in and enjoy the journey of learning, one word at a time!
-          <span style="font-size: small"
-            >*Disclaimer: Despite the cheerful demeanor of this site, Words and
-            Definitions are not guarunteed to be child friendly*</span
-          >
         </p>
-        <button id="fetch-button">New Word!</button>
+        <div class="controls">
+          <select id="part-of-speech-dropdown">
+            <option value="">Any</option>
+            <option value="noun">Noun</option>
+            <option value="verb">Verb</option>
+            <option value="adverb">Adverb</option>
+            <option value="adjective">Adjective</option>
+          </select>
+          <button id="fetch-button">New Word!</button>
+        </div>
         <div id="loading-indicator" class="loader" style="display: none"></div>
         <div id="output"></div>
       </main>
@@ -71,7 +76,7 @@
         <li>
           <a href="https://random-word-api.herokuapp.com/home">
             <img src="assets/images/github.png" alt="Github" />
-            Random Word Ap
+            Random Word Api
           </a>
         </li>
         <li>
