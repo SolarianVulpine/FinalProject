@@ -2,9 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("fetch-button");
   const recentWords = [];
   const maxRecentWords = 10;
+  let clickCount = 0;
 
   button.addEventListener("click", function () {
     showLoading();
+    clickCount++;
+    updateClickCounter();
     fetchWordAndDefinitions();
   });
 
@@ -14,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     while (retries < maxRetries) {
       try {
-        const randomWord = word || await getRandomWord();
+        const randomWord = word || (await getRandomWord());
         console.log("Selected word:", randomWord);
 
         const cacheBuster = `v${new Date().getTime()}`;
@@ -80,22 +83,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateRecentWords(word) {
     if (recentWords.length >= maxRecentWords) {
-      recentWords.shift(); // Remove the oldest word if the array is full
+      recentWords.shift();
     }
     recentWords.push(word);
 
     const recentWordsDiv = document.getElementById("recent-words");
-    recentWordsDiv.innerHTML = ""; // Clear the current list
+    recentWordsDiv.innerHTML = "";
 
     recentWords.forEach((recentWord) => {
       const wordElement = document.createElement("span");
       wordElement.textContent = recentWord;
       wordElement.style.cursor = "pointer";
       wordElement.style.marginRight = "10px";
-      wordElement.addEventListener("click", () => fetchWordAndDefinitions(recentWord));
+      wordElement.addEventListener("click", () =>
+        fetchWordAndDefinitions(recentWord)
+      );
 
       recentWordsDiv.appendChild(wordElement);
     });
+  }
+
+  function updateClickCounter() {
+    const clickCounterDiv = document.getElementById("click-counter");
+    clickCounterDiv.textContent = `Button has been pressed ${clickCount} times`;
   }
 
   function showLoading() {

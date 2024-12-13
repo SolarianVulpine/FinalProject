@@ -16,7 +16,7 @@ body {
 
 /* would have been Hero Image but changed to simple pencil design */
 .hero {
-  height: 50vh;
+  height: 45vh;
   background: repeating-linear-gradient(
     #ffbc0a,
     #ffbc0a 80px,
@@ -191,7 +191,7 @@ body {
   font-size: 7px;
   position: relative;
   text-indent: -9999em;
-  margin: 15px auto; 
+  margin: 15px auto;
   transform: translateZ(0);
   animation-delay: -0.16s;
 }
@@ -225,42 +225,56 @@ body {
 
 /* Extra Content Column */
 .extra-content {
+  display: flex;
+  flex-direction: column;
   width: 20%;
   background-color: #227c9d;
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   border-left: 5px dashed #271033;
   overflow-y: auto;
+  text-align: center;
 }
 
 /* Styling for Recent Words */
 #recent-words {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    margin-top: 20px;
-    font-family: "Patrick Hand", cursive;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-family: "Patrick Hand", cursive;
+  font-size: large;
 }
 
 #recent-words span {
-    cursor: pointer;
-    margin-bottom: 10px;
-    color: #ebc476;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: slideIn 0.5s forwards;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: #ebc476;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.5s forwards;
 }
 
 #recent-words span:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 @keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+#click-counter {
+  margin-top: 20px;
+  font-family: "Patrick Hand", cursive;
+  color: #08508b;
+  background-color: #ebc476;
+  text-align: center;
+  border-radius: 100%;
+  padding: 5%;
+  /* margin-top: auto; */
+}
 
 /* Headings */
 h1 {
