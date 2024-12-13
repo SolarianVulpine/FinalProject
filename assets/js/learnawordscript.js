@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("fetch-button");
+  const partOfSpeechDropdown = document.getElementById(
+    "part-of-speech-dropdown"
+  );
   const recentWords = [];
   const maxRecentWords = 10;
   let clickCount = 0;
@@ -8,12 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
     showLoading();
     clickCount++;
     updateClickCounter();
-    fetchWordAndDefinitions();
+    const selectedPartOfSpeech = partOfSpeechDropdown.value;
+    fetchWordAndDefinitions(null, selectedPartOfSpeech);
   });
 
-  async function fetchWordAndDefinitions(word = null) {
+  async function fetchWordAndDefinitions(word = null, partOfSpeech = "") {
     let retries = 0;
-    const maxRetries = 5;
+    const maxRetries = 10;
 
     while (retries < maxRetries) {
       try {
@@ -30,11 +34,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const data = await response.json();
-        displayWordDefinition(data[0]);
-        updateRecentWords(randomWord);
 
-        hideLoading();
-        return;
+        if (
+          !partOfSpeech ||
+          data[0].meanings.some(
+            (meaning) => meaning.partOfSpeech === partOfSpeech
+          )
+        ) {
+          displayWordDefinition(data[0]);
+          updateRecentWords(randomWord);
+          hideLoading();
+          return;
+        } else {
+          console.log(
+            `The word "${randomWord}" does not match the selected part of speech. Retrying...`
+          );
+        }
       } catch (error) {
         retries++;
         console.error(`Attempt ${retries} failed:`, error.message);

@@ -47,7 +47,16 @@
             Definitions are not guarunteed to be child friendly*</span
           >
         </p>
-        <button id="fetch-button">New Word!</button>
+        <div class="controls">
+          <select id="part-of-speech-dropdown">
+            <option value="">Any</option>
+            <option value="noun">Noun</option>
+            <option value="verb">Verb</option>
+            <option value="adverb">Adverb</option>
+            <option value="adjective">Adjective</option>
+          </select>
+          <button id="fetch-button">New Word!</button>
+        </div>
         <div id="loading-indicator" class="loader" style="display: none"></div>
         <div id="output"></div>
       </main>
