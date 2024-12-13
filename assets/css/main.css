@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffbc0a;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Patrick Hand", "Comic Sans", cursive;
   color: #333;
 }
 
@@ -14,9 +14,31 @@ body {
   flex-direction: column;
 }
 
-/* would have been Hero Image but changed to simple pencil design */
+/* Headings */
+h1 {
+  font-family: "Caveat Brush", cursive;
+  margin-top: 0;
+  color: #08508b;
+}
+
+h2 {
+  font-family: "Caveat Brush", cursive;
+  margin-top: 0;
+  color: #ebc476;
+}
+
+p {
+  font-size: larger;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 3px dashed #ffbc0a;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+/* Hero Section */
 .hero {
-  height: 45vh;
+  height: 40vh;
   background: repeating-linear-gradient(
     #ffbc0a,
     #ffbc0a 80px,
@@ -29,7 +51,7 @@ body {
 
 .pencilElements {
   display: flex;
-  height: 50vh;
+  height: 45vh;
   justify-content: flex-start;
   align-items: center;
   position: relative;
@@ -45,6 +67,28 @@ body {
   padding-right: 20px;
   border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
   font-size: xxx-large;
+}
+
+/* Media Queries for Hero and Pencil Label Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 20px;
+    border-bottom: 3px solid #271033;
+  }
+
+  .pencilElements {
+    flex-direction: column;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .pencilElements .pencilLabel h1 {
+    padding: 20px;
+    font-size: large;
+    border-radius: 50%;
+  }
 }
 
 .pencilElements .pencilWood {
@@ -73,7 +117,6 @@ body {
   display: flex;
   flex-direction: row;
   flex: 1;
-  /* height: 50%; */
 }
 
 /* Navigation Column */
@@ -83,15 +126,7 @@ body {
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   border-right: 5px dashed #271033;
-}
-
-/* Navigation Column */
-.nav {
-  width: 20%;
-  background-color: #c42847;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border-right: 5px dashed #271033;
+  font-size: larger;
 }
 
 /* Navigation Links */
@@ -107,7 +142,7 @@ body {
 
 .nav ul li a {
   text-decoration: none;
-  color: #ffbc0a;
+  color: #ebc476;
   font-weight: bold;
   position: relative;
   z-index: 1;
@@ -145,12 +180,23 @@ body {
   border-left: 5px dashed #271033;
   border-right: 5px dashed #271033;
   overflow-y: auto;
-  background: linear-gradient(
-    #fff 40px,
-    #f0f0f0 40px,
-    #f0f0f0 41px
-  ); /* Creates the lines */
+  background: linear-gradient(#fff 40px, #f0f0f0 40px, #f0f0f0 41px);
   background-size: 100% 41px;
+}
+
+/* Media Queries for Main Content Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    width: 100%;
+    padding: 10px;
+    border-left: none;
+    border-right: none;
+    background-size: 100% 31px;
+  }
+
+  .main-content p {
+    font-size: medium;
+  }
 }
 
 #fetch-button {
@@ -159,7 +205,7 @@ body {
   border: none;
   padding: 15px 30px;
   font-size: 1em;
-  font-family: "Patrick Hand", cursive;
+  font-family: "Comic Sans Ms", "comic sans", cursive;
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -173,6 +219,15 @@ body {
 
 #fetch-button:hover {
   background-color: #a22039;
+}
+
+/* Media Queries for Fetch Button Responsive Design */
+@media (max-width: 768px) {
+  #fetch-button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.2em;
+  }
 }
 
 /* Loader Styles */
@@ -236,7 +291,6 @@ body {
   text-align: center;
 }
 
-/* Styling for Recent Words */
 #recent-words {
   display: flex;
   flex-direction: column;
@@ -267,37 +321,32 @@ body {
 
 #click-counter {
   margin-top: 20px;
-  font-family: "Patrick Hand", cursive;
+  font-family: "Comic Sans Ms", "comic sans", cursive;
   color: #08508b;
   background-color: #ebc476;
   text-align: center;
   border-radius: 100%;
   padding: 5%;
-  /* margin-top: auto; */
 }
 
-/* Headings */
-h1 {
-  font-family: "Caveat Brush", cursive;
-  margin-top: 0;
-  color: #08508b;
+/* Media Queries for Extra Content Responsive Design */
+@media (max-width: 768px) {
+  .extra-content {
+    width: 100%;
+    order: 2;
+    padding: 10px;
+  }
+
+  #recent-words {
+    margin-top: 10px;
+  }
+
+  #click-counter {
+    margin-top: 15px;
+  }
 }
 
-h2 {
-  font-family: "Caveat Brush", cursive;
-  margin-top: 0;
-  color: #ebc476;
-}
-
-p {
-  font-family: "Patrick Hand" cursive;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border: 3px dashed #ffbc0a;
-  margin: 10px 0;
-  border-radius: 10px;
-}
-
+/* Container */
 .container::before,
 .container::after {
   content: "";
@@ -313,6 +362,7 @@ p {
   margin: 10px 0;
 }
 
+/* Footer Styles */
 footer {
   background-image: url(/assets/images/pexels-artempodrez-7233099.jpg);
   background-size: cover;
@@ -321,16 +371,20 @@ footer {
   border-top: 5px solid #271033;
   width: 100%;
   margin-top: auto;
+  padding: 20px;
 }
 
 .footer_links ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer_links li {
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .footer_links a {
@@ -350,6 +404,23 @@ footer {
   vertical-align: middle;
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .footer_links ul {
+    flex-direction: column;
+  }
+
+  .footer_links li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer_links a {
+    justify-content: center;
+  }
+}
+
 .patrick-hand-regular {
   font-family: "Patrick Hand", cursive;
   font-weight: 400;
@@ -360,4 +431,27 @@ footer {
   font-family: "Caveat Brush", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+    order: -1;
+  }
+
+  .main-content {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+  }
+
+  .extra-content {
+    width: 100%;
+    order: 1;
+  }
 }
