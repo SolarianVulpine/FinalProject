@@ -1,4 +1,4 @@
-import { easyAPIcall, normalAPIcall, hardAPIcall } from 'assets/js/api.js';
+import { easyAPIcall, normalAPIcall, hardAPIcall } from './api.js';
 
 let fetchedword = "";
 let scrambledword = "";
