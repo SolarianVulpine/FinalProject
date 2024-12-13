@@ -333,7 +333,7 @@ p {
 
 /* Footer Styles */
 footer {
-  background-image: url(/assets/images/pexels-artempodrez-7233099.jpg);
+  background-image: url(../assets/images/pexels-artempodrez-7233099.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
