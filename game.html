@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Scramble</title>
-    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="assets/images/Book.png" />
+    <title>What's the Word?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Patrick+Hand&display=swap"
+        rel="stylesheet" />
 </head>
+
+<header>
+    <div class="hero">
+        <div class="pencilElements">
+            <div class="pencilLabel">
+                <h1>Lets Get Ready To Un-Scramble!</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
 <body>
-    <div class="hero"></div>
-    <nav>
-        <a href="../FinalProject_ActivityBook/index.html">Home</a>
-        <a href="../FinalProject_ActivityBook/contact.html">Contact</a>
-        <a href="../FinalProject_ActivityBook/about.html">About</a>
+    <script>src="assets/js/script.js"</script>
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="../FinalProject_ActivityBook/index.html">Home</a>
+            </li>
+            <li>
+                <a href="../FinalProject_ActivityBook/contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="../FinalProject_ActivityBook/about.html">About</a>
+            </li>
+        </ul>
     </nav>
-    <h1>Word Scramble</h1>
-    <aside>
+    <main class="totallynot-main-content">
+        <h1>Word Scramble</h1>
+        <div id="scrambledWord"></div>
+        <button type="button" id="easy">Easy</button>
+        <button type="button" id="normal">Normal</button>
+        <button type="button" id="hard">Hard</button>
+        <input type="text" name="GuessBox" id="userGuess"><br>
+        <button type="button" id="submit">Submit</button>
+        <button type="button" id="reset">Reset</button>
+    </main>
+    <div class="extra-content">
+        <aside>
         Rules<br>
         <ul>
             <li>Pick a difficulty level</li>
             <ul>
                 <li>Easy<br>
-                    Guess a four letter word in 15 seconds<br>
-                    You get 3 trys
+                    Guess a 4 letter word
                 </li>
                 <li>Normal<br>
-                    Guess a 6 letter word in 10 seconds<br>
-                    You get 2 trys
+                    Guess a 6 letter word
                 </li>
                 <li>Hard<br>
-                    Guess a 10 letter word in 8 seconds<br>
-                    You get one try
+                    Guess a 8 letter word
                 </li>
             </ul>
         </ul>
     </aside>
-    
-    <button type="button" id="easy">Easy</button>
-    <button type="button" id="normal">Normal</button>
-    <button type="button" id="hard">Hard</button>
-    <input type="text" name="GuessBox" id="userGuess"><br>
-    <button type="button" id="submit">Submit</button>
-    <button type="button" id="reset">Reset</button>
+    </div>
 </body>
+
+<footer>
+    <ul>
+        <li>
+            <a href="https://github.com/meetDeveloper/freeDictionaryAPI"><img
+                    src="../FinalProject_ActivityBook/assets/images/github.png" alt="Github" />
+                Dictionary Api</a>
+        </li>
+        <li>
+            <a href="https://github.com/SolarianVulpine/FinalProject_ActivityBook"><img
+                    src="../FinalProject_ActivityBook/assets/images/github.png" alt="GitHub" />
+                Our Repository</a>
+        </li>
+        <li>
+            <a href="https://www.atlasschool.com/"><img src="../FinalProject_ActivityBook/assets/images/Lumi.png"
+                    alt="Atlas Mascot Lumi" />
+                Atlas</a>
+        </li>
+    </ul>
+</footer>
+
 </html>
