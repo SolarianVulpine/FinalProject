@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     while (retries < maxRetries) {
       try {
         const randomWordData = await fetch(
-          "https://random-word-api.herokuapp.com/word?number=1"
+          "https://random-word-api.herokuapp.com/word?number=1" 
         );
         const wordData = await randomWordData.json();
 

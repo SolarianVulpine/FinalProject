@@ -154,14 +154,20 @@ body {
 }
 
 /* Headings */
-h1,
-h2 {
+h1 {
   font-family: "Caveat Brush", cursive;
   margin-top: 0;
   color: #08508b;
 }
 
+h2 {
+  font-family: "Caveat Brush", cursive;
+  margin-top: 0;
+  color: #ebc476;
+}
+
 p {
+  font-family: "Patrick Hand" cursive;
   padding: 10px;
   background-color: #f5f5f5;
   border: 3px dashed #ffbc0a;
@@ -213,4 +219,16 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.patrick-hand-regular {
+  font-family: "Patrick Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", serif;
+  font-weight: 400;
+  font-style: normal;
 }
