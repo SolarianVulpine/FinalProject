@@ -227,6 +227,29 @@ p {
   }
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#part-of-speech-dropdown {
+  padding: 15px 30px;
+  font-size: 1em;
+  font-family: "Comic Sans Ms", "comic sans", cursive;
+  background-color: #fff;
+  color: #c42847;
+  border: 2px solid #c42847;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#part-of-speech-dropdown:hover {
+  background-color: #f2f2f2;
+}
+
 #fetch-button {
   background-color: #c42847;
   color: #fff;
@@ -237,7 +260,6 @@ p {
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
-  margin-bottom: 30px;
 }
 
 #fetch-button:active {
@@ -249,14 +271,20 @@ p {
   background-color: #a22039;
 }
 
-/* Media Queries for Fetch Button Responsive Design */
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  #fetch-button {
+  .controls {
+    flex-direction: column;
+  }
+
+  #fetch-button,
+  #part-of-speech-dropdown {
     width: 100%;
     padding: 10px 0;
     font-size: 1.2em;
   }
 }
+
 /* Extra Content Column */
 .extra-content {
   display: flex;

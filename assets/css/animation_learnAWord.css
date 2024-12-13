@@ -1,0 +1,130 @@
+.joke-button {
+  background-color: #c42847;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.joke-button:hover {
+  background-color: #ac1936;
+}
+
+@keyframes swipeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes swipeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.swipe-out {
+  animation: swipeOut 0.3s forwards;
+}
+
+.swipe-in {
+  animation: swipeIn 0.3s forwards;
+}
+
+/* Loader Styles */
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+
+.loader {
+  color: #a22039;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  margin: 15px auto;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
+.loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+.nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: #271033;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::before {
+  width: 100%;
+}
+
+.nav ul li a:hover {
+  color: #fff;
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#recent-words span {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.5s forwards;
+}
