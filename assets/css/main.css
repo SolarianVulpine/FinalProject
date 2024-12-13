@@ -17,6 +17,7 @@ body {
     #b58500 82px
   );
   position: relative;
+  border-bottom: 5px solid #271033;
 }
 
 .pencilElements {
@@ -29,14 +30,14 @@ body {
 }
 
 .pencilElements .pencilLabel h1 {
-        color: #ecdada;
-        background-color: #000;
-        padding-top: 35px;
-        padding-bottom: 35px;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
-        font-size: xx-large;
+  color: #ecdada;
+  background-color: #000;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+  font-size: xxx-large;
 }
 
 .pencilElements .pencilWood {
@@ -44,7 +45,7 @@ body {
   position: absolute;
   aspect-ratio: cos(30deg);
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  background-color:  #ebc476;
+  background-color: #ebc476;
   z-index: 1;
 }
 
@@ -157,7 +158,7 @@ h1,
 h2 {
   font-family: "Caveat Brush", cursive;
   margin-top: 0;
-  color: #7dce82;
+  color: #08508b;
 }
 
 p {
@@ -184,10 +185,14 @@ p {
 }
 
 footer {
-  background-color: #c42847;
-  color: #f9f7f3;
-  padding: 20px;
-  text-align: center;
+  background: repeating-linear-gradient(
+    #ffbc0a,
+    #ffbc0a 20px,
+    #b58500 25px,
+    #b58500 22px
+  );
+  position: relative;
+  border-top: 5px solid #271033;
 }
 
 .footer_links ul {
